@@ -20,7 +20,7 @@ export const HeroSection: React.FC = () => {
     >
       {/* Framed Hero Card with Motion Video Background */}
       <div className="relative w-full min-h-[92vh] sm:min-h-[95vh] rounded-[28px] sm:rounded-[38px] md:rounded-[48px] overflow-hidden bg-[#E6E7E6] text-[#0F172A] flex flex-col justify-between shadow-2xl border border-white/30">
-        
+
         {/* Full-bleed Video Background with Enhanced Contrast Layer */}
         <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden">
           <video

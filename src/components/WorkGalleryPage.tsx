@@ -553,9 +553,9 @@ export const WorkGalleryPage: React.FC<WorkGalleryPageProps> = ({ onNavigate }) 
   };
 
   return (
-    <div className="relative w-full min-h-screen bg-[#0C0C0C] text-[#EDEDEB] p-3 sm:p-5 md:p-6 flex flex-col justify-center select-none overflow-hidden">
-      {/* ── Main Framed Card (100% consistent with Home & About) ── */}
-      <div className="relative w-full min-h-[92vh] sm:min-h-[95vh] rounded-[28px] sm:rounded-[38px] md:rounded-[48px] overflow-hidden bg-[#0A0A0C] text-white flex flex-col justify-between shadow-2xl border border-white/10">
+    <div className="relative w-full h-[100dvh] sm:min-h-screen bg-[#0C0C0C] text-[#EDEDEB] p-0 sm:p-5 md:p-6 flex flex-col justify-center select-none overflow-hidden">
+      {/* ── Main Framed Card (100% full height on mobile, elegant framed card on desktop) ── */}
+      <div className="relative w-full h-full sm:min-h-[95vh] rounded-none sm:rounded-[38px] md:rounded-[48px] overflow-hidden bg-[#0A0A0C] text-white flex flex-col justify-between shadow-none sm:shadow-2xl border-0 sm:border border-white/10">
 
         {/* ── Top Navbar (100% Identical placement & padding across all pages) ── */}
         <SiteHeader currentPage="work" onNavigate={onNavigate} className="relative z-40" />
@@ -811,7 +811,7 @@ export const WorkGalleryPage: React.FC<WorkGalleryPageProps> = ({ onNavigate }) 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.85, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="pointer-events-auto flex items-center justify-between sm:justify-center gap-1 sm:gap-1.5 p-1.5 rounded-full bg-[#111114]/90 backdrop-blur-2xl border border-white/15 shadow-[0_12px_40px_rgba(0,0,0,0.8)] w-[84%] max-w-[340px] sm:w-auto"
+            className="pointer-events-auto flex items-center justify-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 rounded-full bg-[#111114]/90 backdrop-blur-2xl border border-white/15 shadow-[0_12px_40px_rgba(0,0,0,0.8)] w-fit max-w-[95vw]"
           >
             {CATEGORY_ITEMS.map((item) => {
               const isActive = activeCategory === item.label;
@@ -823,10 +823,10 @@ export const WorkGalleryPage: React.FC<WorkGalleryPageProps> = ({ onNavigate }) 
                   onClick={() => handleCategorySelect(item.label)}
                   title={item.label}
                   aria-label={item.label}
-                  className={`relative flex-1 sm:flex-initial flex items-center justify-center rounded-full font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap active:scale-95 ${isActive
+                  className={`relative flex items-center justify-center rounded-full font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap active:scale-95 ${isActive
                       ? 'bg-white text-[#0A0A0C] font-bold shadow-md'
                       : 'text-white/60 hover:text-white hover:bg-white/10'
-                    } py-2.5 px-3 sm:px-5 sm:py-2 text-xs sm:text-sm`}
+                    } px-4 py-2.5 sm:px-5 sm:py-2 text-xs sm:text-sm`}
                 >
                   <Icon className="w-4 h-4 shrink-0 sm:hidden" />
                   <span className="hidden sm:inline">{item.label}</span>

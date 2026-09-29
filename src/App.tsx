@@ -95,22 +95,17 @@ export default function App() {
                       <button
                         type="button"
                         onClick={() => handleNavigate('work')}
-                        className="text-left text-sm sm:text-base font-semibold text-[#0F172A]/75 hover:text-[#0F172A] transition-colors cursor-pointer flex items-center gap-1.5"
+                        className="text-left text-sm sm:text-base font-semibold text-[#0F172A]/75 hover:text-[#0F172A] transition-colors cursor-pointer"
                       >
-                        <span>Work</span>
-                        <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-black/10 text-black/60 font-medium">Soon</span>
+                        Work
                       </button>
                       <button
                         type="button"
                         onClick={() => handleNavigate('about')}
-                        className="text-left text-sm sm:text-base font-semibold text-[#0F172A]/75 hover:text-[#0F172A] transition-colors cursor-pointer flex items-center gap-1.5"
+                        className="text-left text-sm sm:text-base font-semibold text-[#0F172A]/75 hover:text-[#0F172A] transition-colors cursor-pointer"
                       >
-                        <span>About</span>
-                        <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-black/10 text-black/60 font-medium">Soon</span>
+                        About
                       </button>
-                      <a href="#services" className="text-sm sm:text-base font-semibold text-[#0F172A]/75 hover:text-[#0F172A] transition-colors">Services</a>
-                      <a href="#projects" className="text-sm sm:text-base font-semibold text-[#0F172A]/75 hover:text-[#0F172A] transition-colors">Latest Project</a>
-                      <a href="mailto:ianfirdaus.design@gmail.com" className="text-sm sm:text-base font-semibold text-[#0F172A]/75 hover:text-[#0F172A] transition-colors">Contact</a>
                     </nav>
                   </div>
 
@@ -181,55 +176,66 @@ export default function App() {
                     href="mailto:ianfirdaus.design@gmail.com"
                     className="inline-flex items-center gap-2 text-xl sm:text-2xl font-bold text-[#E63920] hover:opacity-85 transition-opacity group"
                   >
-                    <span>Contact Ian</span>
+                    <span>Get in Touch</span>
                     <span className="w-6 h-6 rounded-full bg-[#E63920] text-white flex items-center justify-center group-hover:scale-110 transition-transform">
                       <ArrowUp className="w-3.5 h-3.5 rotate-45 stroke-[2.5]" />
                     </span>
                   </a>
                   <p className="text-xs text-[#0F172A]/45 mt-1 font-medium">Let&apos;s start a project together</p>
                 </div>
-                <div className="lg:text-right">
-                  <a
-                    href="#projects"
-                    className="inline-flex items-center gap-2 text-base sm:text-lg font-bold text-[#0F172A] hover:opacity-80 transition-opacity group"
-                  >
-                    <span>Latest Project</span>
-                    <span className="w-5 h-5 rounded-full bg-[#0F172A] text-white flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <ArrowUp className="w-3 h-3 rotate-45 stroke-[2.5]" />
-                    </span>
-                  </a>
-                  <p className="text-xs text-[#0F172A]/45 mt-0.5 font-medium">Explore selected works</p>
-                </div>
               </div>
             </div>
           </FadeIn>
         </div>
 
-        {/* ── Giant IANFRDS Typography with Staggered Entrance Animation ── */}
-        <div className="relative w-full overflow-hidden select-none pointer-events-none px-2 sm:px-6 md:px-10">
-          <div className="w-full flex justify-center items-end overflow-hidden pt-4 sm:pt-6 pb-1">
+        {/* ── Middle Info Bar / Divider ── */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-5 pb-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#0F172A]/45 font-medium border-t border-[#0F172A]/[0.08]">
+          <div className="flex items-center gap-3">
+            <span>Ian Firdaus ©{new Date().getFullYear()}</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <span>Indonesia</span>
+            <span>·</span>
+            <span>{new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}</span>
+            <span>·</span>
+            <span>29°C ⛅</span>
+          </div>
+        </div>
+
+        {/* ── Giant IANFRDS Typography rising from behind Grass Landscape ── */}
+        <div className="relative w-full overflow-hidden select-none mt-2 sm:mt-4">
+          <div className="relative w-full flex justify-center items-end overflow-hidden pt-10 sm:pt-16 md:pt-24 pb-0">
+            {/* Giant IANFRDS Typography (z-0, positioned behind the landscape) */}
             <motion.h2
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.15 }}
-              className="font-kanit font-black text-[#0F172A] tracking-[-0.03em] uppercase whitespace-nowrap inline-flex justify-center items-end m-0 p-0"
+              viewport={{ once: true, amount: 0.05 }}
+              className="font-kanit font-black text-[#0F172A] tracking-[-0.03em] uppercase whitespace-nowrap inline-flex justify-center items-end m-0 p-0 relative z-0 px-4 sm:px-8"
               style={{
-                fontSize: 'clamp(44px, 16vw, 250px)',
+                fontSize: 'clamp(72px, 20vw, 320px)',
                 lineHeight: 0.88,
+                marginBottom: 'clamp(34px, 7.8vw, 145px)',
               }}
             >
               {['I', 'A', 'N', 'F', 'R', 'D', 'S'].map((char, index) => (
                 <motion.span
                   key={index}
                   variants={{
-                    hidden: { y: '115%', opacity: 0 },
+                    hidden: { y: '140%', opacity: 0 },
                     visible: {
                       y: '0%',
                       opacity: 1,
                       transition: {
-                        duration: 0.7,
-                        ease: [0.22, 1, 0.36, 1],
-                        delay: index * 0.05,
+                        y: {
+                          duration: 0.85,
+                          ease: [0.16, 1, 0.3, 1],
+                          delay: index * 0.08,
+                        },
+                        opacity: {
+                          duration: 0.2,
+                          ease: 'easeOut',
+                          delay: index * 0.08,
+                        },
                       },
                     },
                   }}
@@ -239,22 +245,13 @@ export default function App() {
                 </motion.span>
               ))}
             </motion.h2>
-          </div>
-        </div>
 
-        {/* ── Bottom bar ── */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-4 pb-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#0F172A]/45 font-medium border-t border-[#0F172A]/[0.08]">
-          <div className="flex items-center gap-3">
-            <span>Ian Firdaus ©{new Date().getFullYear()}</span>
-            <span>·</span>
-            <a href="#" className="hover:text-[#0F172A] transition-colors">Privacy Policy</a>
-          </div>
-          <div className="flex items-center gap-3">
-            <span>Indonesia</span>
-            <span>·</span>
-            <span>{new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}</span>
-            <span>·</span>
-            <span>29°C ⛅</span>
+            {/* Grass Foreground Image (z-10, sits at the bottom overlapping lower part of IANFRDS) */}
+            <img
+              src="/footer-grass.png"
+              alt="Natural Meadow Landscape"
+              className="absolute bottom-0 left-0 right-0 w-full min-w-full pointer-events-none select-none z-10 h-auto min-h-[44px] max-h-[320px] object-cover object-bottom"
+            />
           </div>
         </div>
       </footer>

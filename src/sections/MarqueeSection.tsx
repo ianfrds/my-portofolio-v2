@@ -9,57 +9,57 @@ interface MarqueeItem {
 
 const ROW_1_DATA: MarqueeItem[] = [
   {
-    src: 'https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif',
+    src: 'https://i.pinimg.com/736x/b7/0f/5b/b70f5bf06ec9829c79682b1d1f9e4e49.jpg',
     tag: 'Web3 & Spatial UX',
     category: 'Product Design',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-codenest-preview-Cgppc2qV.gif',
+    src: 'https://i.pinimg.com/736x/ec/5f/b6/ec5fb6c6088e6d4545ffb1af03987bc0.jpg',
     tag: 'Developer Cloud IDE',
     category: 'Design System',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-vex-ventures-preview-BczMFIiw.gif',
+    src: 'https://i.pinimg.com/736x/f6/55/cc/f655cc518fb05ce8a76c37d91638d8fe.jpg',
     tag: 'Venture Capital Brand',
     category: 'Brand Identity',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-stellar-ai-v2-preview-DjvxjG3C.gif',
+    src: 'https://i.pinimg.com/736x/35/6c/f8/356cf86473be723e9fffeb672fd7681a.jpg',
     tag: 'AI Generative Canvas',
     category: 'UI/UX Interface',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-asme-preview-B_nGDnTP.gif',
+    src: 'https://i.pinimg.com/736x/61/b8/50/61b850013d6cb178683ecb82c4b4c864.jpg',
     tag: 'Precision Engineering OS',
     category: 'Enterprise SaaS',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-transform-data-preview-Cx5OU29N.gif',
+    src: 'https://i.pinimg.com/736x/a4/4f/99/a44f993ee4f65d7d29c98253d8361ecb.jpg',
     tag: 'Analytics & Data Viz',
     category: 'Dashboard UX',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-vitara-preview-Cjz2QYyU.gif',
+    src: 'https://i.pinimg.com/736x/b9/04/71/b9047102fc2705bf58c3267112898a81.jpg',
     tag: 'Automotive Digital Cluster',
     category: 'HMI / Spatial UI',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-terra-preview-BFjrCr7T.gif',
+    src: 'https://i.pinimg.com/736x/1a/62/9b/1a629b88de5afdfe395dee5e56a8ce4c.jpg',
     tag: 'BioTech Research Portal',
     category: 'Web Application',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-skyelite-preview-DHaZIgUv.gif',
+    src: 'https://i.pinimg.com/736x/38/7b/aa/387baa9ee49a64e0acaab9cd93c3bb57.jpg',
     tag: 'Luxury Aviation Booking',
     category: 'Mobile & Web UI',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-aethera-preview-DknSlcTa.gif',
+    src: 'https://i.pinimg.com/736x/da/a7/ae/daa7ae806698af225a71566381abe8dd.jpg',
     tag: 'Editorial Typography System',
     category: 'Graphic Design',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-designpro-preview-D8c5_een.gif',
+    src: 'https://i.pinimg.com/736x/08/03/38/0803384fc9fd7efd94aa0eb085d6b14b.jpg',
     tag: 'Creative Suite Toolkit',
     category: 'Product Design',
   },
@@ -67,52 +67,52 @@ const ROW_1_DATA: MarqueeItem[] = [
 
 const ROW_2_DATA: MarqueeItem[] = [
   {
-    src: 'https://motionsites.ai/assets/hero-stellar-ai-preview-D3HL6bw1.gif',
+    src: 'https://i.pinimg.com/736x/5d/06/43/5d0643fe56de4a616f83d67d21be2a69.jpg',
     tag: 'Autonomous AI Copilot',
     category: 'User Experience',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-xportfolio-preview-D4A8maiC.gif',
+    src: 'https://i.pinimg.com/736x/b7/66/27/b7662714904a08ff9e001957d3a3107c.jpg',
     tag: 'Dynamic Art Direction',
     category: 'Graphic Design',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-orbit-web3-preview-BXt4OttD.gif',
+    src: 'https://i.pinimg.com/736x/9e/bf/51/9ebf51493e40fb7abe051f843e281fdb.jpg',
     tag: 'DeFi Portfolio Tracker',
     category: 'Fintech UI',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-nexora-preview-cx5HmUgo.gif',
+    src: 'https://i.pinimg.com/736x/49/d2/78/49d278ffdd9385b3dfb2104f0009c58d.jpg',
     tag: 'Modular Component Kit',
     category: 'Design Tokens',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-evr-ventures-preview-DZxeVFEX.gif',
+    src: 'https://i.pinimg.com/736x/56/f8/df/56f8df79b10c7c885353e57c21e61ea5.jpg',
     tag: 'Global Venture Identity',
     category: 'Brand Guidelines',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-planet-orbit-preview-DWAP8Z1P.gif',
+    src: 'https://i.pinimg.com/736x/fe/84/2b/fe842b0bbdb22e01a0cea0ad3fa91b12.jpg',
     tag: 'Spatial Orbit 3D Interface',
     category: 'Interaction UI',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-new-era-preview-CocuDUm9.gif',
+    src: 'https://i.pinimg.com/736x/60/48/c4/6048c4579835a9dbe213d94522603e45.jpg',
     tag: 'Architectural Lookbook',
     category: 'Visual Design',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-wealth-preview-B70idl_u.gif',
+    src: 'https://i.pinimg.com/736x/e6/4c/ea/e64cea0ce9fc99e659cad162b0bd5643.jpg',
     tag: 'Neo-Bank Consumer App',
     category: 'iOS & Android UX',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-luminex-preview-CxOP7ce6.gif',
+    src: 'https://i.pinimg.com/736x/5a/69/f8/5a69f87ad6650c58f3f7c704084a2f5d.jpg',
     tag: 'Design System Documentation',
     category: 'Component Library',
   },
   {
-    src: 'https://motionsites.ai/assets/hero-celestia-preview-0yO3jXO8.gif',
+    src: 'https://i.pinimg.com/736x/0a/39/ff/0a39ff2ab2e4b3029b2bbc6a5de6924d.jpg',
     tag: 'Immersive 3D Experience',
     category: 'Interactive Web',
   },

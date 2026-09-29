@@ -22,9 +22,9 @@ const PROJECTS: ProjectData[] = [
     year: '2026',
     tags: ['Fintech', 'Dashboard', 'Design System'],
     heroImg:
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85',
+      'https://i.pinimg.com/736x/08/03/38/0803384fc9fd7efd94aa0eb085d6b14b.jpg',
     thumbImg:
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055451_e317bf2d-28d4-48cc-86b0-6f72f25b6327.png&w=1280&q=85',
+      'https://i.pinimg.com/736x/5d/06/43/5d0643fe56de4a616f83d67d21be2a69.jpg',
     link: '#',
   },
   {
@@ -34,9 +34,9 @@ const PROJECTS: ProjectData[] = [
     year: '2025',
     tags: ['visionOS', 'Interaction', '3D UI'],
     heroImg:
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85',
+      'https://i.pinimg.com/736x/b7/66/27/b7662714904a08ff9e001957d3a3107c.jpg',
     thumbImg:
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85',
+      'https://i.pinimg.com/736x/9e/bf/51/9ebf51493e40fb7abe051f843e281fdb.jpg',
     link: '#',
   },
   {
@@ -46,9 +46,9 @@ const PROJECTS: ProjectData[] = [
     year: '2025',
     tags: ['Branding', 'Visual Identity', 'Guidelines'],
     heroImg:
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85',
+      'https://i.pinimg.com/736x/49/d2/78/49d278ffdd9385b3dfb2104f0009c58d.jpg',
     thumbImg:
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85',
+      'https://i.pinimg.com/736x/fe/84/2b/fe842b0bbdb22e01a0cea0ad3fa91b12.jpg',
     link: '#',
   },
   {
@@ -58,9 +58,9 @@ const PROJECTS: ProjectData[] = [
     year: '2024',
     tags: ['Data Viz', 'Analytics', 'B2B'],
     heroImg:
-      'https://motionsites.ai/assets/hero-celestia-preview-0yO3jXO8.gif',
+      'https://i.pinimg.com/736x/e6/4c/ea/e64cea0ce9fc99e659cad162b0bd5643.jpg',
     thumbImg:
-      'https://motionsites.ai/assets/hero-orbit-web3-preview-BXt4OttD.gif',
+      'https://i.pinimg.com/736x/5a/69/f8/5a69f87ad6650c58f3f7c704084a2f5d.jpg',
     link: '#',
   },
   {
@@ -70,9 +70,9 @@ const PROJECTS: ProjectData[] = [
     year: '2024',
     tags: ['E-Commerce', 'Fashion', 'Framer'],
     heroImg:
-      'https://motionsites.ai/assets/hero-luminex-preview-CxOP7ce6.gif',
+      'https://i.pinimg.com/736x/0a/39/ff/0a39ff2ab2e4b3029b2bbc6a5de6924d.jpg',
     thumbImg:
-      'https://motionsites.ai/assets/hero-stellar-ai-v2-preview-DjvxjG3C.gif',
+      'https://i.pinimg.com/736x/0f/48/9c/0f489c88aaf9cb663283e1b5bbdf91b7.jpg',
     link: '#',
   },
 ];
@@ -207,7 +207,7 @@ export const ProjectsSection: React.FC = () => {
               className="hero-heading font-display font-black uppercase leading-none tracking-tight text-center"
               style={{ fontSize: 'clamp(2.8rem, 8vw, 110px)' }}
             >
-              Case Studies
+              Latest Project
             </h2>
           </FadeIn>
         </div>

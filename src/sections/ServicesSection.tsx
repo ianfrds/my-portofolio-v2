@@ -19,7 +19,7 @@ const SERVICES: ServiceItem[] = [
     name: 'UI/UX & Product Design',
     deliverables: ['User Flows', 'Wireframes', 'Prototypes', 'Design Systems'],
     image:
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85',
+      'https://i.pinimg.com/736x/dd/80/4b/dd804bda03294fec04c0b3ba7c231041.jpg',
     accent: '#10B981', // emerald
     badge: 'Fintech & SaaS',
     rotate: 3,
@@ -29,7 +29,7 @@ const SERVICES: ServiceItem[] = [
     name: 'Scalable Design Systems',
     deliverables: ['Figma Variables', 'Design Tokens', 'Component Libraries'],
     image:
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055451_e317bf2d-28d4-48cc-86b0-6f72f25b6327.png&w=1280&q=85',
+      'https://i.pinimg.com/736x/da/a7/ae/daa7ae806698af225a71566381abe8dd.jpg',
     accent: '#6366F1', // indigo
     badge: 'Tokens & UI Kits',
     rotate: -2.5,
@@ -39,7 +39,7 @@ const SERVICES: ServiceItem[] = [
     name: 'Mobile App Design',
     deliverables: ['iOS HIG', 'Material 3', 'Micro-interactions'],
     image:
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85',
+      'https://i.pinimg.com/736x/27/7b/42/277b42fc5b3a00d20795fdb365965f6f.jpg',
     accent: '#F97316', // coral
     badge: 'iOS & Android',
     rotate: 2,
@@ -49,7 +49,7 @@ const SERVICES: ServiceItem[] = [
     name: 'Web Design & Framer',
     deliverables: ['Landing Pages', 'Responsive Web', 'Framer Dev'],
     image:
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85',
+      'https://i.pinimg.com/736x/60/48/c4/6048c4579835a9dbe213d94522603e45.jpg',
     accent: '#A855F7', // purple
     badge: 'High-Conversion Web',
     rotate: -3,
@@ -59,7 +59,7 @@ const SERVICES: ServiceItem[] = [
     name: 'Brand Identity & Visuals',
     deliverables: ['Logo Systems', 'Typography', 'Brand Guidelines'],
     image:
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85',
+      'https://i.pinimg.com/736x/56/f8/df/56f8df79b10c7c885353e57c21e61ea5.jpg',
     accent: '#EC4899', // pink
     badge: 'Branding & Identity',
     rotate: 3.5,

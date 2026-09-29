@@ -18,61 +18,51 @@ const PROJECTS: ProjectData[] = [
   {
     id: '01',
     name: 'FinFlow OS',
-    category: 'Product Design',
+    category: 'Fintech & Product Design',
     year: '2026',
     tags: ['Fintech', 'Dashboard', 'Design System'],
-    heroImg:
-      'https://i.pinimg.com/736x/08/03/38/0803384fc9fd7efd94aa0eb085d6b14b.jpg',
-    thumbImg:
-      'https://i.pinimg.com/736x/5d/06/43/5d0643fe56de4a616f83d67d21be2a69.jpg',
+    heroImg: '/projects/project-finflow.jpg',
+    thumbImg: '/projects/project-finflow.jpg',
     link: '#',
   },
   {
     id: '02',
     name: 'Lumina Spatial',
-    category: 'Spatial UI/UX',
+    category: 'Spatial Computing & UI/UX',
     year: '2025',
-    tags: ['visionOS', 'Interaction', '3D UI'],
-    heroImg:
-      'https://i.pinimg.com/736x/b7/66/27/b7662714904a08ff9e001957d3a3107c.jpg',
-    thumbImg:
-      'https://i.pinimg.com/736x/9e/bf/51/9ebf51493e40fb7abe051f843e281fdb.jpg',
+    tags: ['visionOS', 'Glassmorphism', 'Spatial UI'],
+    heroImg: '/projects/project-lumina.jpg',
+    thumbImg: '/projects/project-lumina.jpg',
     link: '#',
   },
   {
     id: '03',
     name: 'Kroma Studio',
-    category: 'Brand Identity',
+    category: 'Graphic Design & Identity',
     year: '2025',
-    tags: ['Branding', 'Visual Identity', 'Guidelines'],
-    heroImg:
-      'https://i.pinimg.com/736x/49/d2/78/49d278ffdd9385b3dfb2104f0009c58d.jpg',
-    thumbImg:
-      'https://i.pinimg.com/736x/fe/84/2b/fe842b0bbdb22e01a0cea0ad3fa91b12.jpg',
+    tags: ['Swiss Style', 'Typography', 'Brand Manual'],
+    heroImg: '/projects/project-kroma.jpg',
+    thumbImg: '/projects/project-kroma.jpg',
     link: '#',
   },
   {
     id: '04',
-    name: 'Nexus Cloud',
-    category: 'Enterprise SaaS',
-    year: '2024',
-    tags: ['Data Viz', 'Analytics', 'B2B'],
-    heroImg:
-      'https://i.pinimg.com/736x/e6/4c/ea/e64cea0ce9fc99e659cad162b0bd5643.jpg',
-    thumbImg:
-      'https://i.pinimg.com/736x/5a/69/f8/5a69f87ad6650c58f3f7c704084a2f5d.jpg',
+    name: 'Nexus AI Studio',
+    category: 'Generative AI & Node Canvas',
+    year: '2025',
+    tags: ['AI Canvas', 'Node Editor', 'Dark SaaS'],
+    heroImg: '/projects/project-nexus.jpg',
+    thumbImg: '/projects/project-nexus.jpg',
     link: '#',
   },
   {
     id: '05',
-    name: 'Velox Lookbook',
-    category: 'Web Design',
+    name: 'Noir et Ivoire',
+    category: 'Editorial Fashion & Web Design',
     year: '2024',
-    tags: ['E-Commerce', 'Fashion', 'Framer'],
-    heroImg:
-      'https://i.pinimg.com/736x/0a/39/ff/0a39ff2ab2e4b3029b2bbc6a5de6924d.jpg',
-    thumbImg:
-      'https://i.pinimg.com/736x/0f/48/9c/0f489c88aaf9cb663283e1b5bbdf91b7.jpg',
+    tags: ['E-Commerce', 'Editorial', 'Awwwards SOTD'],
+    heroImg: '/projects/project-velox.jpg',
+    thumbImg: '/projects/project-velox.jpg',
     link: '#',
   },
 ];

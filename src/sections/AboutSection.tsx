@@ -39,10 +39,9 @@ export const AboutSection: React.FC = () => {
     offset: ['start end', 'end start'],
   });
 
-  // Parallax: ABOUT arrives from the left, IAN arrives from the right, meeting in the center
-  const aboutX = useTransform(scrollYProgress, [0, 0.45, 0.75, 1], ['-32vw', '0vw', '0vw', '-4vw']);
-  const ianX = useTransform(scrollYProgress, [0, 0.45, 0.75, 1], ['32vw', '0vw', '0vw', '4vw']);
-  const headingOpacity = useTransform(scrollYProgress, [0, 0.25, 0.85, 1], [0.2, 1, 1, 0.4]);
+  // Parallax: Vertical scrolling depth effect for the ABOUT title
+  const titleY = useTransform(scrollYProgress, [0, 1], [-70, 70]);
+  const headingOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.35, 1, 1, 0.35]);
 
   return (
     <section
@@ -62,33 +61,17 @@ export const AboutSection: React.FC = () => {
           </span>
         </FadeIn>
 
-        {/* Parallax Converging Heading: ABOUT (left) + IAN (right) */}
+        {/* Parallax Heading: ABOUT */}
         <div className="w-full py-4 flex items-center justify-center">
           <motion.h2
-            style={{ opacity: headingOpacity }}
-            className="flex items-center justify-center gap-3 sm:gap-5 md:gap-7 leading-none tracking-tight text-center"
+            style={{
+              y: titleY,
+              opacity: headingOpacity,
+              fontSize: 'clamp(3rem, 11vw, 130px)',
+            }}
+            className="hero-heading font-display font-black uppercase tracking-tight text-center whitespace-nowrap leading-none select-none"
           >
-            {/* ABOUT sliding from the left */}
-            <motion.span
-              style={{
-                x: aboutX,
-                fontSize: 'clamp(2.2rem, 7.5vw, 105px)',
-              }}
-              className="hero-heading font-display font-black uppercase inline-block whitespace-nowrap"
-            >
-              About
-            </motion.span>
-
-            {/* IAN sliding from the right */}
-            <motion.span
-              style={{
-                x: ianX,
-                fontSize: 'clamp(2.2rem, 7.5vw, 105px)',
-              }}
-              className="hero-heading font-display font-black uppercase inline-block whitespace-nowrap"
-            >
-              Ian
-            </motion.span>
+            About
           </motion.h2>
         </div>
 

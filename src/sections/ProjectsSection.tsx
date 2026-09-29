@@ -135,18 +135,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               {project.year}
             </span>
           </div>
-
-          {/* Thumbnail preview — bottom right, overlapping into info area */}
-          <div className="absolute bottom-[-20px] right-6 sm:right-8 z-20 hidden sm:block">
-            <div className="w-[140px] md:w-[180px] h-[90px] md:h-[110px] rounded-2xl overflow-hidden border-2 border-[#111113] shadow-2xl ring-1 ring-white/[0.06]">
-              <img
-                src={project.thumbImg}
-                alt={`${project.name} thumbnail`}
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
         </div>
 
         {/* ── Info bar at bottom ── */}

@@ -15,6 +15,7 @@ export function useSmoothScroll(enabled: boolean = true) {
       touchMultiplier: 1.5,
     });
 
+    lenis.scrollTo(0, { immediate: true });
     (window as any).__lenis = lenis;
 
     let rafId: number;

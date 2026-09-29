@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HeroSection } from './sections/HeroSection';
 import { MarqueeSection } from './sections/MarqueeSection';
@@ -16,9 +16,36 @@ export default function App() {
   const [introFinished, setIntroFinished] = useState(false);
   const [currentPage, setCurrentPage] = useState<'home' | 'work' | 'about'>('home');
 
+  // Guarantee page always starts at top of Hero section on fresh load or refresh
+  useLayoutEffect(() => {
+    if (typeof window !== 'undefined') {
+      if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+      }
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+      if (window.location.hash) {
+        window.history.replaceState(null, '', window.location.pathname);
+      }
+    }
+  }, []);
+
+  // Ensure scroll is at 0 before page unloads
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, []);
+
   const handleNavigate = (page: 'home' | 'work' | 'about') => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleIntroComplete = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+    setIntroFinished(true);
   };
 
   // Activate buttery smooth scrolling for home page once intro curtain completes
@@ -27,7 +54,7 @@ export default function App() {
   return (
     <>
       {!introFinished && (
-        <IntroLoader onComplete={() => setIntroFinished(true)} />
+        <IntroLoader onComplete={handleIntroComplete} />
       )}
 
       {currentPage === 'work' ? (

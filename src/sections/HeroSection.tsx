@@ -24,10 +24,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-screen bg-[#0C0C0C] p-3 sm:p-5 md:p-6 flex flex-col justify-center select-none"
+      className="relative w-full h-[100dvh] sm:h-auto sm:min-h-screen bg-[#0C0C0C] p-0 sm:p-5 md:p-6 flex flex-col justify-center select-none overflow-hidden"
     >
-      {/* Framed Hero Card with Interactive Dot ASCII + Floating Showcase Background */}
-      <div className="relative w-full min-h-[92vh] sm:min-h-[95vh] rounded-[28px] sm:rounded-[38px] md:rounded-[48px] overflow-hidden bg-[#0A0A0C] text-white flex flex-col justify-between shadow-2xl border border-white/10">
+      {/* Framed Hero Card (100% full height & edge-to-edge on mobile, elegant framed card on desktop) */}
+      <div className="relative w-full h-full sm:min-h-[95vh] rounded-none sm:rounded-[38px] md:rounded-[48px] overflow-hidden bg-[#0A0A0C] text-white flex flex-col justify-between shadow-none sm:shadow-2xl border-0 sm:border border-white/10">
 
         {/* Interactive Dot Grid + ASCII Effect with Disperse on Hover */}
         <InteractiveDotAsciiBackground />
@@ -41,7 +41,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
         </div>
 
         {/* Central Hero Content - Short, Punchy, High-Contrast & Centered */}
-        <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 sm:px-8 my-auto max-w-2xl mx-auto py-10 sm:py-14">
+        <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 sm:px-8 my-auto max-w-2xl mx-auto py-6 sm:py-14">
           {/* Compact Pill Badge */}
           <FadeIn delay={0.1} y={15}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs sm:text-sm font-semibold mb-4 sm:mb-6 shadow-sm">
@@ -128,7 +128,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
         </div>
 
         {/* Bottom Bar: Clean Minimal Info */}
-        <div className="relative w-full z-20 px-6 sm:px-10 md:px-14 pb-6 sm:pt-4 sm:pb-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/70 font-semibold">
+        <div className="relative w-full z-20 px-4 sm:px-10 md:px-14 pb-5 sm:pt-4 sm:pb-8 flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-3 text-xs text-white/70 font-semibold">
           <FadeIn delay={0.5} y={10}>
             <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/15 text-white/90">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />

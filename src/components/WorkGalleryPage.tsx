@@ -199,23 +199,37 @@ export const WorkGalleryPage: React.FC<WorkGalleryPageProps> = ({ onNavigate }) 
   const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   const [activeCategory, setActiveCategory] = useState<CategoryType>('All');
+  const [galleryCategory, setGalleryCategory] = useState<CategoryType>('All');
   const [selectedCardKey, setSelectedCardKey] = useState<string | null>(null);
   const [isBloomed, setIsBloomed] = useState(false);
   const [isGathered, setIsGathered] = useState(true);
   const isTransitioningRef = useRef(false);
+  const bloomTimeoutRef = useRef<ReturnType<typeof setTimeout>[]>([]);
+
+  const clearBloomTimeouts = () => {
+    bloomTimeoutRef.current.forEach((t) => clearTimeout(t));
+    bloomTimeoutRef.current = [];
+  };
+
+  // Clean up timers on unmount
+  useEffect(() => {
+    return () => {
+      bloomTimeoutRef.current.forEach((t) => clearTimeout(t));
+    };
+  }, []);
 
   // Memoized 5 columns of 5 cards each.
   // When 'All': uses BASE_PROJECTS (5 cols x 5 rows = 25 distinct cards).
   // When filtered: filters by category and loops/cycles the matching cards across all 25 slots,
   // ensuring the layout remains 100% dense without empty holes, with seamless infinite 2D looping!
   const displayedColumns = useMemo(() => {
-    if (activeCategory === 'All') {
+    if (galleryCategory === 'All') {
       return Array.from({ length: NUM_COLS }, (_, colIdx) =>
         BASE_PROJECTS.slice(colIdx * NUM_ROWS, (colIdx + 1) * NUM_ROWS)
       );
     }
 
-    const matches = BASE_PROJECTS.filter((p) => p.category === activeCategory);
+    const matches = BASE_PROJECTS.filter((p) => p.category === galleryCategory);
     if (matches.length === 0) {
       return Array.from({ length: NUM_COLS }, (_, colIdx) =>
         BASE_PROJECTS.slice(colIdx * NUM_ROWS, (colIdx + 1) * NUM_ROWS)
@@ -231,7 +245,7 @@ export const WorkGalleryPage: React.FC<WorkGalleryPageProps> = ({ onNavigate }) 
         return matches[matchIndex];
       })
     );
-  }, [activeCategory]);
+  }, [galleryCategory]);
 
   // Responsive state for mobile view
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 640);
@@ -518,15 +532,21 @@ export const WorkGalleryPage: React.FC<WorkGalleryPageProps> = ({ onNavigate }) 
     }
   };
 
-  // Category filter click: smoothly gather cards to center, switch filter, then bloom outward
+  // Category filter click: immediate tab highlight with silky smooth card bloom animation
   const handleCategorySelect = (cat: CategoryType) => {
-    if (cat === activeCategory || isTransitioningRef.current) return;
+    if (cat === activeCategory) return;
 
+    // 1. Immediately highlight new tab on the menu (0ms delay for instant touch response)
+    setActiveCategory(cat);
+    setSelectedCardKey(null);
+
+    // 2. Clear any pending timeouts to prevent stutter on fast clicks
+    clearBloomTimeouts();
     isTransitioningRef.current = true;
     setIsBloomed(false);
     setIsGathered(true);
 
-    // Smoothly glide viewport to center if user had scrolled far
+    // 3. Smoothly re-center viewport
     if (containerRef.current) {
       const initX = Math.round(CENTER_CARD_X - containerRef.current.clientWidth / 2);
       const initY = Math.round(CENTER_CARD_Y - containerRef.current.clientHeight / 2);
@@ -534,22 +554,31 @@ export const WorkGalleryPage: React.FC<WorkGalleryPageProps> = ({ onNavigate }) 
       isWheelingRef.current = true;
     }
 
-    // Step 1: Wait for cards to collapse into center stack (420ms)
-    setTimeout(() => {
-      setActiveCategory(cat);
-      setSelectedCardKey(null);
+    const collapseTime = isMobile ? 220 : 260;
+    const bloomTime = isMobile ? 550 : 650;
 
-      // Step 2: Brief pause in center stack (120ms), then bloom outward displaying filtered cards
-      setTimeout(() => {
+    // Step 1: Wait for cards to collapse into center stack
+    const t1 = setTimeout(() => {
+      // Switch project category while collapsed at center
+      setGalleryCategory(cat);
+
+      // Step 2: Bloom outward with filtered cards
+      const t2 = setTimeout(() => {
         setIsGathered(false);
 
-        // Step 3: Once bloom completes, reactivate borders & shadows
-        setTimeout(() => {
+        // Step 3: Reactivate borders & shadows once bloom finishes
+        const t3 = setTimeout(() => {
           setIsBloomed(true);
           isTransitioningRef.current = false;
-        }, 950);
-      }, 120);
-    }, 420);
+        }, bloomTime);
+
+        bloomTimeoutRef.current.push(t3);
+      }, 40);
+
+      bloomTimeoutRef.current.push(t2);
+    }, collapseTime);
+
+    bloomTimeoutRef.current.push(t1);
   };
 
   return (
@@ -681,16 +710,16 @@ export const WorkGalleryPage: React.FC<WorkGalleryPageProps> = ({ onNavigate }) 
                                   isMainBlock
                                     ? isGathered
                                       ? {
-                                        duration: 0.42,
+                                        duration: isMobile ? 0.28 : 0.38,
                                         ease: [0.38, 0, 0.25, 1],
                                       }
                                       : {
-                                        duration: 0.95,
+                                        duration: isMobile ? 0.65 : 0.85,
                                         ease: [0.16, 1, 0.3, 1],
-                                        delay: Math.min(0.2, (dist / 1400) * 0.16),
+                                        delay: Math.min(0.12, (dist / 1400) * 0.1),
                                       }
                                     : {
-                                      duration: isGathered ? 0.25 : 0.65,
+                                      duration: isGathered ? (isMobile ? 0.18 : 0.25) : (isMobile ? 0.45 : 0.65),
                                       ease: 'easeOut',
                                     }
                                 }
@@ -811,7 +840,7 @@ export const WorkGalleryPage: React.FC<WorkGalleryPageProps> = ({ onNavigate }) 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.85, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="pointer-events-auto flex items-center justify-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 rounded-full bg-[#111114]/90 backdrop-blur-2xl border border-white/15 shadow-[0_12px_40px_rgba(0,0,0,0.8)] w-fit max-w-[95vw]"
+            className="pointer-events-auto flex items-center justify-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 rounded-full bg-[#111114]/90 backdrop-blur-2xl border border-white/15 shadow-[0_12px_40px_rgba(0,0,0,0.8)] w-fit max-w-[95vw] touch-manipulation select-none"
           >
             {CATEGORY_ITEMS.map((item) => {
               const isActive = activeCategory === item.label;
@@ -821,11 +850,10 @@ export const WorkGalleryPage: React.FC<WorkGalleryPageProps> = ({ onNavigate }) 
                   key={item.label}
                   type="button"
                   onClick={() => handleCategorySelect(item.label)}
-                  title={item.label}
                   aria-label={item.label}
-                  className={`relative flex items-center justify-center rounded-full font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap active:scale-95 ${isActive
+                  className={`relative flex items-center justify-center rounded-full font-semibold transition-all duration-150 cursor-pointer whitespace-nowrap active:scale-95 touch-manipulation select-none ${isActive
                       ? 'bg-white text-[#0A0A0C] font-bold shadow-md'
-                      : 'text-white/60 hover:text-white hover:bg-white/10'
+                      : 'text-white/60 sm:hover:text-white sm:hover:bg-white/10 active:bg-white/20 active:text-white'
                     } px-4 py-2.5 sm:px-5 sm:py-2 text-xs sm:text-sm`}
                 >
                   <Icon className="w-4 h-4 shrink-0 sm:hidden" />

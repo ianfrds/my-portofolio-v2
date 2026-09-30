@@ -225,9 +225,7 @@ export default function App() {
                     fontSize: 'clamp(62px, 19vw, 300px)',
                     lineHeight: 0.88,
                     marginBottom: 'clamp(34px, 7.8vw, 145px)',
-                    WebkitTextStroke: 'clamp(2px, 0.26vw, 3.5px) #d6efffff',
-                    WebkitTextFillColor: 'transparent',
-                    color: 'transparent',
+                    color: '#d6efff',
                   }}
                 >
                   {['I', 'A', 'N', 'F', 'R', 'D', 'S'].map((char, index) => (

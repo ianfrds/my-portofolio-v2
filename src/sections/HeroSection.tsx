@@ -4,7 +4,7 @@ import { FadeIn } from '../components/FadeIn';
 import { ArrowUpRight } from 'lucide-react';
 import { InteractiveDotAsciiBackground } from '../components/InteractiveDotAsciiBackground';
 import { RandomFloatingImages } from '../components/RandomFloatingImages';
-import { SiteHeader, type PageType } from '../components/SiteHeader';
+import { type PageType } from '../components/SiteHeader';
 
 export interface HeroSectionProps {
   onNavigate?: (page: PageType) => void;
@@ -35,9 +35,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
         {/* Floating Portfolio Images with Looping Random Entrance/Exit */}
         <RandomFloatingImages />
 
-        {/* Top Navbar: Menu on the far left, Get in Touch on the far right */}
-        <div className="w-full z-30 relative">
-          <SiteHeader currentPage="home" onNavigate={onNavigate || (() => {})} />
+        {/* Top Navbar Spacer: Exactly mirrors SiteHeader layout spacing inside the framed hero card */}
+        <div className="w-full px-5 sm:px-10 md:px-14 pt-6 sm:pt-8 flex justify-between items-center opacity-0 pointer-events-none select-none shrink-0" aria-hidden="true">
+          <div className="h-10 sm:h-11" />
         </div>
 
         {/* Central Hero Content - Short, Punchy, High-Contrast & Centered */}

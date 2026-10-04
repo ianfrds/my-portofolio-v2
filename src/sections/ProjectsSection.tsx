@@ -165,7 +165,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   );
 };
 
-export const ProjectsSection: React.FC = () => {
+import { type PageType } from '../components/SiteHeader';
+
+export interface ProjectsSectionProps {
+  onNavigate?: (page: PageType) => void;
+}
+
+export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onNavigate }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -175,7 +181,7 @@ export const ProjectsSection: React.FC = () => {
   return (
     <section
       id="projects"
-      className="relative w-full bg-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 z-10 px-5 sm:px-8 md:px-12 pt-24 sm:pt-28 md:pt-36 pb-40"
+      className="relative w-full bg-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 z-10 px-5 sm:px-8 md:px-12 pt-24 sm:pt-28 md:pt-36 pb-32 sm:pb-40"
     >
       <div className="max-w-6xl mx-auto w-full">
         {/* Heading */}
@@ -191,7 +197,7 @@ export const ProjectsSection: React.FC = () => {
         </div>
 
         {/* Sticky-stacking project cards container */}
-        <div ref={containerRef} className="relative w-full flex flex-col pb-24">
+        <div ref={containerRef} className="relative w-full flex flex-col pb-16 sm:pb-24">
           {PROJECTS.map((project, index) => (
             <ProjectCard
               key={project.id}
@@ -201,6 +207,28 @@ export const ProjectsSection: React.FC = () => {
               progress={scrollYProgress}
             />
           ))}
+        </div>
+
+        {/* ── Explore All Work CTA Button (Appears after all cards are scrolled) ── */}
+        <div className="relative z-20 flex flex-col items-center justify-center pt-10 sm:pt-14 text-center">
+          <FadeIn delay={0.1} y={20}>
+            <div className="flex flex-col items-center gap-4 sm:gap-5">
+              <span className="text-xs font-mono uppercase tracking-widest text-white/50 font-semibold">
+                More Selected Works
+              </span>
+
+              <button
+                type="button"
+                onClick={() => onNavigate?.('work')}
+                className="inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-4.5 rounded-full bg-white text-[#0A0A0C] text-sm sm:text-base font-bold shadow-[0_10px_35px_rgba(255,255,255,0.15)] hover:shadow-[0_15px_45px_rgba(255,255,255,0.25)] hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer"
+              >
+                <span>Explore All Work</span>
+                <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#0A0A0C] text-white flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                  <ArrowUpRight className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
+                </span>
+              </button>
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>

@@ -9,6 +9,7 @@ interface SiteHeaderProps {
   currentPage: PageType;
   onNavigate: (page: PageType) => void;
   className?: string;
+  sticky?: boolean;
 }
 
 interface NavLinkItem {
@@ -39,9 +40,8 @@ export const NavHoverLink: React.FC<{
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`relative inline-flex flex-col py-1 transition-colors cursor-pointer group select-none text-left ${
-        isActive ? 'text-white font-bold' : 'text-white/70 hover:text-white'
-      } ${className}`}
+      className={`relative inline-flex flex-col py-1 transition-colors cursor-pointer group select-none text-left ${isActive ? 'text-white font-bold' : 'text-white/70 hover:text-white'
+        } ${className}`}
     >
       <span className="relative overflow-hidden inline-flex items-center leading-none">
         {/* Primary characters moving up */}
@@ -97,13 +97,40 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
   currentPage,
   onNavigate,
   className = '',
+  sticky = false,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Listen to window and Lenis scroll when sticky is enabled
+  useEffect(() => {
+    if (!sticky) return;
+
+    const checkScroll = () => {
+      const y = window.scrollY || document.documentElement.scrollTop;
+      setIsScrolled(y > 20);
+    };
+
+    checkScroll();
+    window.addEventListener('scroll', checkScroll, { passive: true });
+
+    const lenis = (window as any).__lenis;
+    if (lenis) {
+      lenis.on('scroll', checkScroll);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', checkScroll);
+      if (lenis) {
+        lenis.off('scroll', checkScroll);
+      }
+    };
+  }, [sticky]);
 
   // Lock background scroll when mobile off-canvas drawer is open
   useEffect(() => {
@@ -170,9 +197,8 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.08 + idx * 0.05, duration: 0.3 }}
-                          className={`flex items-center justify-between py-2 px-3 -mx-3 rounded-xl transition-all group ${
-                            isActive ? 'bg-white/10' : 'hover:bg-white/5'
-                          }`}
+                          className={`flex items-center justify-between py-2 px-3 -mx-3 rounded-xl transition-all group ${isActive ? 'bg-white/10' : 'hover:bg-white/5'
+                            }`}
                         >
                           <div className="flex items-center gap-3">
                             <span className="font-mono text-xs text-white/35 font-normal">
@@ -224,39 +250,87 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
           document.body
         )}
 
-      {/* ── Top Header Bar (Unified exact placement & padding across all pages) ── */}
-      <header className={`w-full px-5 sm:px-10 md:px-14 pt-6 sm:pt-8 flex justify-between items-center ${className}`}>
-        {/* Desktop Nav Links on the Left */}
-        <nav className="hidden md:flex items-center gap-6 lg:gap-9 text-xs sm:text-sm font-semibold">
-          {NAV_LINKS.map((link) => (
-            <NavHoverLink
-              key={link.page}
-              label={link.label}
-              isActive={currentPage === link.page}
-              onClick={() => onNavigate(link.page)}
-            />
-          ))}
-        </nav>
-
-        {/* Mobile Hamburger Button on the Left */}
-        <button
-          onClick={() => setIsMenuOpen(true)}
-          aria-label="Open Navigation Menu"
-          className="md:hidden flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs font-semibold shadow-xs hover:bg-white/25 transition-all active:scale-95 cursor-pointer"
+      {/* ── Top Header Bar (Unified exact placement & transitions to Full-Width Sticky Header on Scroll) ── */}
+      {sticky ? (
+        <header
+          className={`fixed top-0 left-0 right-0 z-50 transition-[padding] duration-300 ease-[0.16,1,0.3,1] ${isScrolled
+              ? 'py-3 sm:py-3.5 px-5 sm:px-10 md:px-14'
+              : 'pt-6 sm:pt-[52px] md:pt-[56px] pb-0 px-5 sm:px-[60px] md:px-[80px]'
+            } ${className}`}
         >
-          <Menu className="w-4 h-4" />
-          <span>Menu</span>
-        </button>
+          {/* Smooth Frosted Glass Backdrop Layer (Clean fade without any white bottom border) */}
+          <div
+            className={`absolute inset-0 -z-10 bg-[#0A0A0C]/90 backdrop-blur-2xl shadow-[0_12px_36px_rgba(0,0,0,0.7)] transition-opacity duration-300 ease-out pointer-events-none ${isScrolled ? 'opacity-100' : 'opacity-0'
+              }`}
+          />
 
-        {/* Right Action Button */}
-        <a
-          href={currentPage === 'home' ? '#contact' : 'mailto:ianfirdaus.design@gmail.com'}
-          className="flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-[#0F172A] text-xs sm:text-sm font-bold hover:bg-white/90 transition-all shadow-md group cursor-pointer shrink-0 hover:scale-105 active:scale-95"
-        >
-          <span>Get in Touch</span>
-          <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-        </a>
-      </header>
+          <div className="w-full flex justify-between items-center pointer-events-auto">
+            {/* Desktop Nav Links on the Left */}
+            <nav className="hidden md:flex items-center gap-6 lg:gap-9 text-xs sm:text-sm font-semibold">
+              {NAV_LINKS.map((link) => (
+                <NavHoverLink
+                  key={link.page}
+                  label={link.label}
+                  isActive={currentPage === link.page}
+                  onClick={() => onNavigate(link.page)}
+                />
+              ))}
+            </nav>
+
+            {/* Mobile Hamburger Button on the Left */}
+            <button
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="Open Navigation Menu"
+              className="md:hidden flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs font-semibold shadow-xs hover:bg-white/25 transition-all active:scale-95 cursor-pointer"
+            >
+              <Menu className="w-4 h-4" />
+              <span>Menu</span>
+            </button>
+
+            {/* Right Action Button */}
+            <a
+              href={currentPage === 'home' ? '#contact' : 'mailto:ianfirdaus.design@gmail.com'}
+              className="flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-[#0F172A] text-xs sm:text-sm font-bold hover:bg-white/90 transition-all shadow-md group cursor-pointer shrink-0 hover:scale-105 active:scale-95"
+            >
+              <span>Get in Touch</span>
+              <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </div>
+        </header>
+      ) : (
+        <header className={`w-full px-5 sm:px-10 md:px-14 pt-6 sm:pt-8 flex justify-between items-center ${className}`}>
+          {/* Desktop Nav Links on the Left */}
+          <nav className="hidden md:flex items-center gap-6 lg:gap-9 text-xs sm:text-sm font-semibold">
+            {NAV_LINKS.map((link) => (
+              <NavHoverLink
+                key={link.page}
+                label={link.label}
+                isActive={currentPage === link.page}
+                onClick={() => onNavigate(link.page)}
+              />
+            ))}
+          </nav>
+
+          {/* Mobile Hamburger Button on the Left */}
+          <button
+            onClick={() => setIsMenuOpen(true)}
+            aria-label="Open Navigation Menu"
+            className="md:hidden flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs font-semibold shadow-xs hover:bg-white/25 transition-all active:scale-95 cursor-pointer"
+          >
+            <Menu className="w-4 h-4" />
+            <span>Menu</span>
+          </button>
+
+          {/* Right Action Button */}
+          <a
+            href={currentPage === 'home' ? '#contact' : 'mailto:ianfirdaus.design@gmail.com'}
+            className="flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-[#0F172A] text-xs sm:text-sm font-bold hover:bg-white/90 transition-all shadow-md group cursor-pointer shrink-0 hover:scale-105 active:scale-95"
+          >
+            <span>Get in Touch</span>
+            <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
+        </header>
+      )}
     </>
   );
 };

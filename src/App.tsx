@@ -6,8 +6,9 @@ import { AboutSection } from './sections/AboutSection';
 import { ServicesSection } from './sections/ServicesSection';
 import { ProjectsSection } from './sections/ProjectsSection';
 import { IntroLoader } from './components/IntroLoader';
-import { ComingSoonPage } from './components/ComingSoonPage';
 import { WorkGalleryPage } from './components/WorkGalleryPage';
+import { AboutPage } from './components/AboutPage';
+import { SiteHeader } from './components/SiteHeader';
 import { useSmoothScroll } from './hooks/useSmoothScroll';
 import { FadeIn } from './components/FadeIn';
 import { ArrowUp } from 'lucide-react';
@@ -60,15 +61,18 @@ export default function App() {
       {currentPage === 'work' ? (
         <WorkGalleryPage onNavigate={handleNavigate} />
       ) : currentPage === 'about' ? (
-        <ComingSoonPage pageType="about" onNavigate={handleNavigate} />
+        <AboutPage onNavigate={handleNavigate} />
       ) : (
         <div className="main-wrapper bg-[#0C0C0C] min-h-screen text-[#D7E2EA] font-sans relative selection:bg-white selection:text-black">
+          {/* Sticky Full-Width Navbar on Scroll */}
+          <SiteHeader currentPage="home" onNavigate={handleNavigate} sticky={true} />
+
           {/* 5 Ordered Sections */}
           <HeroSection onNavigate={handleNavigate} />
           <MarqueeSection />
           <AboutSection />
           <ServicesSection />
-          <ProjectsSection />
+          <ProjectsSection onNavigate={handleNavigate} />
 
           {/* Footer — Inspired by Faizur */}
           <footer

@@ -84,7 +84,7 @@ export const AboutSection: React.FC = () => {
           style={{ fontSize: 'clamp(1.05rem, 1.9vw, 1.4rem)' }}
         >
           <AnimatedText
-            text="With more than six years of experience in product design, i focus on user experience, scalable design systems, and graphic brand identities. I bridge human psychology and pixel-level craft to create interfaces people truly love using. Let's design something extraordinary together!"
+            text="A UI/UX & Graphic Designer with an Informatics background, crafting intuitive mobile apps, web dashboards, and high-impact visual experiences."
             className="text-center font-normal"
           />
         </div>

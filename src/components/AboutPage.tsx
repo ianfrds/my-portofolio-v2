@@ -18,40 +18,40 @@ interface WorkHistoryItem {
 
 const WORK_EXPERIENCES: WorkHistoryItem[] = [
   {
-    period: '2024 — Present',
-    role: 'Lead Product Designer',
-    company: 'Independent / Studio Practice',
-    type: 'Contract',
-    description: 'Leading product design for spatial UI concepts, SaaS platforms, and scalable design token systems.',
+    period: 'Sep 2024 — Present',
+    role: 'UI/UX Designer',
+    company: 'CV. Burningroom Technology',
+    type: 'Surabaya',
+    description: 'Designed UI/UX for enterprise ERP web dashboards, landing pages, and mobile apps focusing on usability and workflow efficiency. Collaborated closely with developers and PMs.',
   },
   {
-    period: '2022 — 2024',
-    role: 'Senior UI/UX Designer',
-    company: 'FinFlow Technologies',
-    type: 'Full-time',
-    description: 'Spearheaded financial dashboards and responsive mobile banking experiences for high-frequency users.',
+    period: 'Nov 2023 — Present',
+    role: 'Presentation & UI Designer',
+    company: 'Eklip Studio',
+    type: 'Remote',
+    description: 'Designed over 200+ professional PowerPoint & Keynote presentation templates, alongside user-friendly UI kits and modern visual templates for web and mobile platforms.',
   },
   {
-    period: '2020 — 2022',
-    role: 'UI/UX & Graphic Designer',
-    company: 'Kroma Digital Agency',
-    type: 'Agency',
-    description: 'Crafted digital brand manuals, web design systems, and high-stakes investor keynote decks.',
+    period: 'Nov 2025 — Feb 2026',
+    role: 'UI/UX Designer Mentor',
+    company: 'Digirock Academy',
+    type: 'Online',
+    description: 'Mentored cohort participants through full product design lifecycles, from user research and information architecture to high-fidelity prototyping and usability testing.',
   },
   {
-    period: '2018 — 2020',
-    role: 'Visual & Digital Designer',
-    company: 'Freelance Consultant',
-    type: 'Freelance',
-    description: 'Partnered with early-stage founders to design MVPs, interactive prototypes, and digital collateral.',
+    period: 'Apr 2026 — Present',
+    role: 'Presentation Template Contributor',
+    company: 'MiriCanvas',
+    type: 'Global Platform',
+    description: 'Created ready-to-use multi-slide presentation decks (10–20+ slides) for global creators, complete with custom covers, typography layouts, charts, and device mockups.',
   },
 ];
 
 const SOCIAL_LINKS = [
-  { name: 'LinkedIn', url: 'https://linkedin.com' },
-  { name: 'Dribbble', url: 'https://dribbble.com' },
-  { name: 'Behance', url: 'https://behance.net' },
-  { name: 'Instagram', url: 'https://instagram.com' },
+  { name: 'Dribbble', url: 'https://dribbble.com/ianfrds' },
+  { name: 'LinkedIn', url: 'https://linkedin.com/in/ianfrds' },
+  { name: 'Instagram', url: 'https://instagram.com/ianfrds' },
+  { name: 'Portfolio (Framer)', url: 'https://ianfrds.framer.website' },
 ];
 
 export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
@@ -101,12 +101,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
 
                 {/* Role */}
                 <p className="text-sm sm:text-base text-white/60 font-medium tracking-wide mb-4 sm:mb-5">
-                  Product Designer &amp; UI/UX Specialist
+                  UI/UX Designer &amp; Graphic Designer
                 </p>
 
                 {/* Bio */}
                 <p className="text-white/75 text-sm sm:text-base leading-relaxed font-normal max-w-md mb-5">
-                  With over six years of experience in product design, I bridge human psychology and pixel-level craft to build intuitive interfaces, scalable design systems, and engaging visual experiences.
+                  UI/UX and Graphic Designer based in Surabaya, Indonesia. With a Bachelor of Informatics background, I specialize in crafting clean, intuitive, and visually engaging interfaces for mobile apps, web ERP dashboards, and presentation systems.
                 </p>
 
                 {/* Status Pill (Positioned below profile description) */}
@@ -120,16 +120,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               <div className="flex flex-col gap-4 pt-2 border-t border-white/[0.08]">
                 <div className="flex items-center gap-2 text-xs font-mono text-white/50">
                   <MapPin className="w-3.5 h-3.5 text-white/40" />
-                  <span>Indonesia • GMT+7</span>
+                  <span>Surabaya, Jawa Timur • Indonesia</span>
                 </div>
 
                 {/* Email Action */}
                 <a
-                  href="mailto:ianfirdaus.design@gmail.com"
+                  href="mailto:ianfirdaus23@gmail.com"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-white/80 transition-colors group w-fit cursor-pointer"
                 >
                   <Mail className="w-4 h-4 text-white/50 group-hover:text-white transition-colors" />
-                  <span>ianfirdaus.design@gmail.com</span>
+                  <span>ianfirdaus23@gmail.com</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-white/40 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white transition-all" />
                 </a>
 
@@ -150,7 +150,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               </div>
             </motion.div>
 
-            {/* ── Right Column: Riwayat Pekerjaan ── */}
+            {/* ── Right Column: Work Experience ── */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -160,10 +160,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               {/* Header */}
               <div className="flex items-center justify-between pb-4 mb-3 border-b border-white/[0.1]">
                 <span className="text-xs font-mono uppercase tracking-widest text-white/50 font-semibold">
-                  Riwayat Pekerjaan
+                  Work Experience
                 </span>
                 <span className="text-xs font-mono text-white/40">
-                  2018 — Present
+                  2023 — Present
                 </span>
               </div>
 

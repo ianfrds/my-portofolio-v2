@@ -14,168 +14,188 @@ interface GalleryProject {
   title: string;
   category: CategoryType;
   src: string;
+  isDribbble?: boolean;
 }
 
-// 25 Curated Works categorized cleanly
+const DribbbleIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm9.897 10.932a10.198 10.198 0 0 0-.897-2.618c-1.378.435-3.356.915-5.612 1.055 1.034 2.802 2.164 5.317 2.378 5.792a10.155 10.155 0 0 0 4.131-4.229zm-6.19 5.41c-.244-.54-1.372-3.04-2.42-5.83-4.708 1.405-9.155 1.348-9.845 1.332a10.17 10.17 0 0 0 5.86 7.085c1.693-2.148 4.793-2.457 6.405-2.587zm-7.986-7.85c2.443-.16 4.717-.674 6.22-1.164A10.133 10.133 0 0 0 8.01 2.502c-1.42 1.487-3.045 3.518-4.289 5.992zm-3.69 2.56a10.02 10.02 0 0 1 .494-1.637c1.233-2.39 2.793-4.35 4.148-5.787A10.22 10.22 0 0 0 2.584 8.76c.466 1.408 1.157 2.705 2.037 3.842-.01-.01-.01-.02-.01-.03zm12.392-7.59a10.152 10.152 0 0 0-4.048-1.46c.162.775.385 2.188.423 3.65 1.547-.464 3.018-.948 3.625-1.19zM10.1 21.688a10.217 10.217 0 0 0 5.158-1.503c-1.517.113-4.288.384-5.894 2.274a10.51 10.51 0 0 0 .736-.771z" />
+  </svg>
+);
+
+// 25 Curated Works categorized cleanly from Portfolio PDF + Dribbble Profile
 const BASE_PROJECTS: GalleryProject[] = [
   // Column 1
   {
     id: 'p-01',
-    title: 'Velox Spatial OS',
+    title: 'JustPay App',
     category: 'UI Design',
-    src: 'https://i.pinimg.com/736x/b7/0f/5b/b70f5bf06ec9829c79682b1d1f9e4e49.jpg',
+    src: '/projects/project-justpay.webp',
   },
   {
     id: 'p-02',
-    title: 'Aura Venture Labs',
+    title: 'MONA - Y2K Deck',
     category: 'Presentation',
-    src: 'https://i.pinimg.com/736x/f6/55/cc/f655cc518fb05ce8a76c37d91638d8fe.jpg',
+    src: '/projects/dribbble-mona.webp',
+    isDribbble: true,
   },
   {
     id: 'p-03',
-    title: 'Axiom Type Specimen',
-    category: 'Graphic Design',
-    src: 'https://i.pinimg.com/736x/da/a7/ae/daa7ae806698af225a71566381abe8dd.jpg',
+    title: 'Agen.cy Landing Page',
+    category: 'UI Design',
+    src: '/projects/dribbble-agen-cy.webp',
+    isDribbble: true,
   },
   {
     id: 'p-04',
-    title: 'Hyperion Cockpit',
-    category: 'Etc',
-    src: 'https://i.pinimg.com/736x/b9/04/71/b9047102fc2705bf58c3267112898a81.jpg',
+    title: 'E-SKAI Tarakan Portal',
+    category: 'UI Design',
+    src: '/projects/project-eskai.webp',
   },
   {
     id: 'p-05',
-    title: 'Lumina Token Kit',
-    category: 'Graphic Design',
-    src: 'https://i.pinimg.com/736x/49/d2/78/49d278ffdd9385b3dfb2104f0009c58d.jpg',
+    title: 'Marketing Strategy Deck',
+    category: 'Presentation',
+    src: '/projects/dribbble-marketing-strategy.webp',
+    isDribbble: true,
   },
 
   // Column 2
   {
     id: 'p-06',
-    title: 'Apex Cloud IDE',
+    title: 'WasteWallet App',
     category: 'UI Design',
-    src: 'https://i.pinimg.com/736x/ec/5f/b6/ec5fb6c6088e6d4545ffb1af03987bc0.jpg',
+    src: '/projects/project-wastewallet.webp',
   },
   {
     id: 'p-07',
-    title: 'Arch Lookbook Keynote',
+    title: 'PRIOX Portfolio Deck',
     category: 'Presentation',
-    src: 'https://i.pinimg.com/736x/60/48/c4/6048c4579835a9dbe213d94522603e45.jpg',
+    src: '/projects/dribbble-priox.webp',
+    isDribbble: true,
   },
   {
     id: 'p-08',
-    title: 'Prism Generative AI',
+    title: 'Catatmak Redesign',
     category: 'UI Design',
-    src: 'https://i.pinimg.com/736x/35/6c/f8/356cf86473be723e9fffeb672fd7681a.jpg',
+    src: '/projects/project-catatmak.webp',
   },
   {
     id: 'p-09',
-    title: 'Atelier Motion Lab',
-    category: 'Graphic Design',
-    src: 'https://i.pinimg.com/736x/b7/66/27/b7662714904a08ff9e001957d3a3107c.jpg',
+    title: 'Brand Guideline Deck',
+    category: 'Presentation',
+    src: '/projects/dribbble-brand-guideline.webp',
+    isDribbble: true,
   },
   {
     id: 'p-10',
-    title: 'Kinetix 3D Visualizer',
-    category: 'Etc',
-    src: 'https://i.pinimg.com/736x/0a/39/ff/0a39ff2ab2e4b3029b2bbc6a5de6924d.jpg',
+    title: 'Niko NFT Marketplace',
+    category: 'UI Design',
+    src: '/projects/dribbble-niko.webp',
+    isDribbble: true,
   },
 
   // Column 3 (center column)
   {
     id: 'p-11',
-    title: 'Chronos Precision OS',
+    title: 'Newave News AI App',
     category: 'UI Design',
-    src: 'https://i.pinimg.com/736x/61/b8/50/61b850013d6cb178683ecb82c4b4c864.jpg',
+    src: '/projects/project-newave.webp',
   },
   {
     id: 'p-12',
-    title: 'Synapse Brand Pitch',
+    title: 'Creative Portfolio Deck',
     category: 'Presentation',
-    src: 'https://i.pinimg.com/736x/56/f8/df/56f8df79b10c7c885353e57c21e61ea5.jpg',
+    src: '/projects/dribbble-creative-portfolio.webp',
+    isDribbble: true,
   },
   {
     id: 'p-13',
-    title: 'Nova Data Viz',
+    title: 'Healthy Tracker App',
     category: 'UI Design',
-    src: 'https://i.pinimg.com/736x/a4/4f/99/a44f993ee4f65d7d29c98253d8361ecb.jpg',
+    src: '/projects/dribbble-healthy-tracker-app.webp',
+    isDribbble: true,
   },
   {
     id: 'p-14',
-    title: 'Flux Spec Typography',
-    category: 'Graphic Design',
-    src: 'https://i.pinimg.com/736x/5a/69/f8/5a69f87ad6650c58f3f7c704084a2f5d.jpg',
+    title: 'Formula 1 Redesign',
+    category: 'UI Design',
+    src: '/projects/dribbble-formula-1-website-redesign.webp',
+    isDribbble: true,
   },
   {
     id: 'p-15',
-    title: 'Sphere Orbit 3D',
-    category: 'Etc',
-    src: 'https://i.pinimg.com/736x/fe/84/2b/fe842b0bbdb22e01a0cea0ad3fa91b12.jpg',
+    title: 'Next.js Dark Landing',
+    category: 'UI Design',
+    src: '/projects/dribbble-next-js-redesign-landing.webp',
+    isDribbble: true,
   },
 
   // Column 4
   {
     id: 'p-16',
-    title: 'Helios Neo-Bank App',
+    title: 'O Study Online App',
     category: 'UI Design',
-    src: 'https://i.pinimg.com/736x/e6/4c/ea/e64cea0ce9fc99e659cad162b0bd5643.jpg',
+    src: '/projects/dribbble-o-study.webp',
+    isDribbble: true,
   },
   {
     id: 'p-17',
-    title: 'Velox Editorial Deck',
-    category: 'Presentation',
-    src: 'https://i.pinimg.com/736x/0f/48/9c/0f489c88aaf9cb663283e1b5bbdf91b7.jpg',
+    title: 'Newsy Onboarding UI',
+    category: 'UI Design',
+    src: '/projects/dribbble-newsy-on-boarding-page.webp',
+    isDribbble: true,
   },
   {
     id: 'p-18',
-    title: 'Pulse DeFi Protocol',
+    title: 'Pawfect Bites Pet Store',
     category: 'UI Design',
-    src: 'https://i.pinimg.com/736x/9e/bf/51/9ebf51493e40fb7abe051f843e281fdb.jpg',
+    src: '/projects/project-pawfect.webp',
   },
   {
     id: 'p-19',
-    title: 'Nexus Autonomous AI',
-    category: 'Etc',
-    src: 'https://i.pinimg.com/736x/5d/06/43/5d0643fe56de4a616f83d67d21be2a69.jpg',
+    title: 'NFT ART Presentation',
+    category: 'Presentation',
+    src: '/projects/dribbble-nft-art.webp',
+    isDribbble: true,
   },
   {
     id: 'p-20',
-    title: 'Verve Graphic System',
-    category: 'Graphic Design',
-    src: 'https://i.pinimg.com/736x/08/03/38/0803384fc9fd7efd94aa0eb085d6b14b.jpg',
+    title: 'ERP Web Dashboard',
+    category: 'UI Design',
+    src: '/projects/project-web-dashboard.webp',
   },
 
   // Column 5
   {
     id: 'p-21',
-    title: 'Zeta Crypto Wallet',
+    title: 'Pegadaian Tring Redesign',
     category: 'UI Design',
-    src: 'https://i.pinimg.com/736x/27/7b/42/277b42fc5b3a00d20795fdb365965f6f.jpg',
+    src: '/projects/project-pegadaian.webp',
   },
   {
     id: 'p-22',
-    title: 'Vanguard Jet Showcase',
-    category: 'Presentation',
-    src: 'https://i.pinimg.com/736x/38/7b/aa/387baa9ee49a64e0acaab9cd93c3bb57.jpg',
+    title: 'Swehat Health Tracker',
+    category: 'UI Design',
+    src: '/projects/project-swehat.webp',
   },
   {
     id: 'p-23',
-    title: 'Stratum Cloud Keynote',
+    title: 'MiriCanvas Deck System',
     category: 'Presentation',
-    src: 'https://i.pinimg.com/736x/dd/80/4b/dd804bda03294fec04c0b3ba7c231041.jpg',
+    src: '/projects/project-ppt-2.webp',
   },
   {
     id: 'p-24',
-    title: 'BioGenics Molecular 3D',
-    category: 'Etc',
-    src: 'https://i.pinimg.com/736x/1a/62/9b/1a629b88de5afdfe395dee5e56a8ce4c.jpg',
+    title: 'Brand Campaign Visuals',
+    category: 'Graphic Design',
+    src: '/projects/project-graphic-1.webp',
   },
   {
     id: 'p-25',
-    title: 'Omni Visual Suite',
-    category: 'UI Design',
-    src: 'https://i.pinimg.com/736x/08/03/38/0803384fc9fd7efd94aa0eb085d6b14b.jpg',
+    title: 'Typography & Visual Poster',
+    category: 'Graphic Design',
+    src: '/projects/project-graphic-2.webp',
   },
 ];
 
@@ -229,7 +249,12 @@ export const WorkGalleryPage: React.FC<WorkGalleryPageProps> = ({ onNavigate }) 
       );
     }
 
-    const matches = BASE_PROJECTS.filter((p) => p.category === galleryCategory);
+    const matches = BASE_PROJECTS.filter((p) => {
+      if (galleryCategory === 'Etc') {
+        return p.category === 'Etc' || p.category === 'Graphic Design' || p.isDribbble;
+      }
+      return p.category === galleryCategory;
+    });
     if (matches.length === 0) {
       return Array.from({ length: NUM_COLS }, (_, colIdx) =>
         BASE_PROJECTS.slice(colIdx * NUM_ROWS, (colIdx + 1) * NUM_ROWS)
@@ -724,7 +749,7 @@ export const WorkGalleryPage: React.FC<WorkGalleryPageProps> = ({ onNavigate }) 
                                     }
                                 }
                                 onClick={() => isBloomed && !isGathered && handleCardClick(fullKey)}
-                                className={`group relative rounded-xl md:rounded-2xl overflow-hidden cursor-pointer shrink-0 will-change-transform transition-[border-color,box-shadow,opacity] duration-500 ${!isBloomed || isGathered
+                                className={`group relative rounded-xl md:rounded-2xl overflow-hidden cursor-pointer shrink-0 transition-[border-color,box-shadow,opacity] duration-500 ${!isBloomed || isGathered
                                     ? 'border border-transparent ring-0 outline-none shadow-none'
                                     : isSelected
                                       ? 'border-transparent ring-2 ring-white shadow-[0_0_35px_rgba(255,255,255,0.4)]'
@@ -751,6 +776,7 @@ export const WorkGalleryPage: React.FC<WorkGalleryPageProps> = ({ onNavigate }) 
                                   src={card.src}
                                   alt={card.title}
                                   loading="lazy"
+                                  decoding="async"
                                   draggable={false}
                                   className={`w-full h-full object-cover transition-transform duration-500 ease-out select-none ${isSelected ? 'scale-105' : 'group-hover:scale-105'
                                     }`}
@@ -758,12 +784,25 @@ export const WorkGalleryPage: React.FC<WorkGalleryPageProps> = ({ onNavigate }) 
 
                                 {/* Subtle Dark Gradient & Clean Title on Hover/Selected */}
                                 <div
-                                  className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-2.5 transition-opacity duration-200 ${isSelected ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                                  className={`absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-between p-3 transition-opacity duration-200 ${isSelected ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                                     }`}
                                 >
-                                  <span className="text-xs font-semibold text-white/90 truncate tracking-tight">
-                                    {card.title}
-                                  </span>
+                                  <div className="flex justify-end">
+                                    {card.isDribbble && (
+                                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#EA4C89] text-white text-[10px] font-bold tracking-wider shadow-sm">
+                                        <DribbbleIcon className="w-2.5 h-2.5" />
+                                        <span>DRIBBBLE</span>
+                                      </span>
+                                    )}
+                                  </div>
+                                  <div className="flex flex-col">
+                                    <span className="text-xs font-bold text-white truncate tracking-tight">
+                                      {card.title}
+                                    </span>
+                                    <span className="text-[10px] text-white/60 font-mono">
+                                      {card.category}
+                                    </span>
+                                  </div>
                                 </div>
                               </motion.div>
                             );
@@ -778,56 +817,28 @@ export const WorkGalleryPage: React.FC<WorkGalleryPageProps> = ({ onNavigate }) 
           </div>
         </div>
 
-        {/* ── Progressive Blur (Pure Black) on the Left Side ── */}
+        {/* ── Soft Edge Vignette on the Left Side ── */}
         <div className="absolute top-0 left-0 bottom-0 w-16 sm:w-28 md:w-44 lg:w-52 pointer-events-none z-30 overflow-hidden">
           <div
-            className="absolute inset-0 backdrop-blur-[2px]"
-            style={{
-              maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 45%)',
-              WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 45%)',
-            }}
-          />
-          <div
-            className="absolute inset-0 backdrop-blur-[5px]"
-            style={{
-              maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%)',
-              WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%)',
-            }}
-          />
-          <div
-            className="absolute inset-0 backdrop-blur-[10px]"
+            className="absolute inset-0 backdrop-blur-[6px]"
             style={{
               maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)',
               WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)',
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0C]/90 via-[#0A0A0C]/35 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0C] via-[#0A0A0C]/60 to-transparent" />
         </div>
 
-        {/* ── Progressive Blur (Pure Black) on the Right Side ── */}
+        {/* ── Soft Edge Vignette on the Right Side ── */}
         <div className="absolute top-0 right-0 bottom-0 w-16 sm:w-28 md:w-44 lg:w-52 pointer-events-none z-30 overflow-hidden">
           <div
-            className="absolute inset-0 backdrop-blur-[2px]"
-            style={{
-              maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 45%)',
-              WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 45%)',
-            }}
-          />
-          <div
-            className="absolute inset-0 backdrop-blur-[5px]"
-            style={{
-              maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%)',
-              WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%)',
-            }}
-          />
-          <div
-            className="absolute inset-0 backdrop-blur-[10px]"
+            className="absolute inset-0 backdrop-blur-[6px]"
             style={{
               maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)',
               WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)',
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-[#0A0A0C]/90 via-[#0A0A0C]/35 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-l from-[#0A0A0C] via-[#0A0A0C]/60 to-transparent" />
         </div>
 
         {/* Top & Bottom Soft Fade (Pure Black) */}

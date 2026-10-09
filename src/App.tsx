@@ -129,9 +129,22 @@ export default function App() {
                       Connect &amp; Social
                     </h4>
                     <div className="grid grid-cols-2 gap-x-6 gap-y-3 max-w-[260px]">
+                      {/* Framer Portfolio */}
+                      <a
+                        href="https://ianfrds.framer.website"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-black hover:opacity-70 transition-opacity group cursor-pointer"
+                      >
+                        <svg className="w-3.5 h-3.5 text-black fill-current shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
+                          <path d="M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z" />
+                        </svg>
+                        <span>Framer</span>
+                      </a>
+
                       {/* Dribbble */}
                       <a
-                        href="https://dribbble.com"
+                        href="https://dribbble.com/ianfrds"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-black hover:opacity-70 transition-opacity group cursor-pointer"
@@ -142,22 +155,9 @@ export default function App() {
                         <span>Dribbble</span>
                       </a>
 
-                      {/* Behance */}
-                      <a
-                        href="https://behance.net"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-black hover:opacity-70 transition-opacity group cursor-pointer"
-                      >
-                        <svg className="w-3.5 h-3.5 text-[#0057ff] fill-current shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
-                          <path d="M22 7h-7v2h7V7zm1.726 10c-.442 1.297-2.029 3-4.976 3-3.418 0-5.818-2.224-5.818-5.893 0-3.766 2.455-5.992 5.688-5.992 3.696 0 5.385 2.766 5.097 6.135h-8.082c.07 1.954 1.416 3.013 3.254 3.013 1.341 0 2.296-.582 2.668-1.263h2.169zm-5.029-4.708c-.08-1.428-1.021-2.146-2.273-2.146-1.396 0-2.316.852-2.459 2.146h4.732zM0 4.5v15h7.822c2.185 0 4.14-.54 5.029-2.096.732-1.282.607-2.909-.328-4.01 1.458-.875 1.932-2.584 1.332-4.186-.677-1.808-2.617-2.708-5.26-2.708H0zm3.254 2.793h4.088c1.373 0 2.289.479 2.289 1.707 0 1.25-.916 1.777-2.289 1.777H3.254V7.293zm0 5.637h4.354c1.643 0 2.623.58 2.623 1.951 0 1.459-1.037 2.072-2.623 2.072H3.254V12.93z" />
-                        </svg>
-                        <span>Behance</span>
-                      </a>
-
                       {/* Instagram */}
                       <a
-                        href="https://instagram.com"
+                        href="https://instagram.com/ianfrds"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-black hover:opacity-70 transition-opacity group cursor-pointer"
@@ -170,7 +170,7 @@ export default function App() {
 
                       {/* LinkedIn */}
                       <a
-                        href="https://linkedin.com"
+                        href="https://linkedin.com/in/ianfrds"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-black hover:opacity-70 transition-opacity group cursor-pointer"
@@ -187,7 +187,7 @@ export default function App() {
                   <div className="flex flex-col gap-3 sm:items-start lg:items-end">
                     <div className="lg:text-right">
                       <a
-                        href="mailto:ianfirdaus.design@gmail.com"
+                        href="mailto:ianfirdaus23@gmail.com"
                         className="inline-flex items-center gap-3 px-6 py-3.5 sm:px-7 sm:py-4 rounded-full bg-white text-black font-bold text-base sm:text-lg border-2 border-black/10 shadow-[0_10px_25px_rgba(0,0,0,0.12)] hover:shadow-[0_14px_32px_rgba(0,0,0,0.18)] hover:scale-105 active:scale-95 transition-all group cursor-pointer"
                       >
                         <span>Get in Touch</span>
@@ -208,7 +208,7 @@ export default function App() {
                 <span>Ian Firdaus ©{new Date().getFullYear()}</span>
               </div>
               <div className="flex items-center gap-3">
-                <span>Indonesia</span>
+                <span>Surabaya, Indonesia</span>
                 <span>·</span>
                 <span>{new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}</span>
                 <span>·</span>

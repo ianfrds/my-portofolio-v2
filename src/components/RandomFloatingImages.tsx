@@ -2,16 +2,21 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const SHOWCASE_IMAGES = [
-  'https://i.pinimg.com/736x/b7/0f/5b/b70f5bf06ec9829c79682b1d1f9e4e49.jpg',
-  'https://i.pinimg.com/736x/ec/5f/b6/ec5fb6c6088e6d4545ffb1af03987bc0.jpg',
-  'https://i.pinimg.com/736x/f6/55/cc/f655cc518fb05ce8a76c37d91638d8fe.jpg',
-  'https://i.pinimg.com/736x/35/6c/f8/356cf86473be723e9fffeb672fd7681a.jpg',
-  'https://i.pinimg.com/736x/61/b8/50/61b850013d6cb178683ecb82c4b4c864.jpg',
-  'https://i.pinimg.com/736x/a4/4f/99/a44f993ee4f65d7d29c98253d8361ecb.jpg',
-  'https://i.pinimg.com/736x/b9/04/71/b9047102fc2705bf58c3267112898a81.jpg',
-  'https://i.pinimg.com/736x/1a/62/9b/1a629b88de5afdfe395dee5e56a8ce4c.jpg',
-  'https://i.pinimg.com/736x/38/7b/aa/387baa9ee49a64e0acaab9cd93c3bb57.jpg',
-  'https://i.pinimg.com/736x/08/03/38/0803384fc9fd7efd94aa0eb085d6b14b.jpg',
+  '/projects/project-justpay.webp',
+  '/projects/dribbble-mona.webp',
+  '/projects/project-eskai.webp',
+  '/projects/dribbble-healthy-tracker-app.webp',
+  '/projects/project-wastewallet.webp',
+  '/projects/dribbble-priox.webp',
+  '/projects/project-newave.webp',
+  '/projects/dribbble-agen-cy.webp',
+  '/projects/project-catatmak.webp',
+  '/projects/dribbble-formula-1-website-redesign.webp',
+  '/projects/dribbble-marketing-strategy.webp',
+  '/projects/project-swehat.webp',
+  '/projects/dribbble-o-study.webp',
+  '/projects/project-web-dashboard.webp',
+  '/projects/dribbble-next-js-redesign-landing.webp',
 ];
 
 interface StackedPhoto {
@@ -168,6 +173,7 @@ export const RandomFloatingImages: React.FC = () => {
                 alt=""
                 className={`w-full h-full object-cover rounded-none block ${photo.aspect}`}
                 loading="eager"
+                decoding="async"
               />
               {/* Subtle filmic ambient edge */}
               <div className="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none" />

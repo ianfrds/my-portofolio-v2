@@ -17,52 +17,38 @@ const SERVICES: ServiceItem[] = [
   {
     id: '01',
     name: 'UI/UX & Product Design',
-    deliverables: ['User Flows', 'Wireframes', 'Prototypes', 'Design Systems'],
-    image:
-      'https://i.pinimg.com/736x/dd/80/4b/dd804bda03294fec04c0b3ba7c231041.jpg',
+    deliverables: ['User Flows', 'Wireframes', 'Interactive Prototypes', 'Design Systems'],
+    image: '/projects/project-justpay.webp',
     accent: '#10B981', // emerald
-    badge: 'Fintech & SaaS',
+    badge: 'Fintech & Mobile Apps',
     rotate: 3,
   },
   {
     id: '02',
-    name: 'Scalable Design Systems',
-    deliverables: ['Figma Variables', 'Design Tokens', 'Component Libraries'],
-    image:
-      'https://i.pinimg.com/736x/da/a7/ae/daa7ae806698af225a71566381abe8dd.jpg',
+    name: 'Web & ERP Dashboard Design',
+    deliverables: ['ERP Systems', 'Enterprise SaaS', 'Web Dashboards', 'Admin Portals'],
+    image: '/projects/project-web-dashboard.webp',
     accent: '#6366F1', // indigo
-    badge: 'Tokens & UI Kits',
+    badge: 'Enterprise & SaaS',
     rotate: -2.5,
   },
   {
     id: '03',
     name: 'Mobile App Design',
-    deliverables: ['iOS HIG', 'Material 3', 'Micro-interactions'],
-    image:
-      'https://i.pinimg.com/736x/27/7b/42/277b42fc5b3a00d20795fdb365965f6f.jpg',
+    deliverables: ['iOS HIG', 'Material 3', 'Micro-interactions', 'Usability Testing'],
+    image: '/projects/project-catatmak.webp',
     accent: '#F97316', // coral
     badge: 'iOS & Android',
     rotate: 2,
   },
   {
     id: '04',
-    name: 'Web Design & Framer',
-    deliverables: ['Landing Pages', 'Responsive Web', 'Framer Dev'],
-    image:
-      'https://i.pinimg.com/736x/60/48/c4/6048c4579835a9dbe213d94522603e45.jpg',
+    name: 'Presentation & Pitch Deck Design',
+    deliverables: ['Keynote Decks', 'PowerPoint Templates', 'MiriCanvas', 'Investor Pitches'],
+    image: '/projects/project-ppt-1.webp',
     accent: '#A855F7', // purple
-    badge: 'High-Conversion Web',
+    badge: '200+ Templates Designed',
     rotate: -3,
-  },
-  {
-    id: '05',
-    name: 'Brand Identity & Visuals',
-    deliverables: ['Logo Systems', 'Typography', 'Brand Guidelines'],
-    image:
-      'https://i.pinimg.com/736x/56/f8/df/56f8df79b10c7c885353e57c21e61ea5.jpg',
-    accent: '#EC4899', // pink
-    badge: 'Branding & Identity',
-    rotate: 3.5,
   },
 ];
 

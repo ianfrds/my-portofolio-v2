@@ -138,7 +138,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
 
           <FadeIn delay={0.55} y={10}>
             <div className="flex items-center gap-1 font-mono text-white/75 px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/15">
-              <span>Indonesia • Remote Worldwide</span>
+              <span>Surabaya, Indonesia • Remote Worldwide</span>
             </div>
           </FadeIn>
         </div>

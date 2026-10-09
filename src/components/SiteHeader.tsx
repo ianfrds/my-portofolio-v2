@@ -233,13 +233,13 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
                   {/* Drawer Footer Info */}
                   <div className="pt-6 border-t border-white/10 flex flex-col gap-4">
                     <a
-                      href="mailto:ianfirdaus.design@gmail.com"
+                      href="mailto:ianfirdaus23@gmail.com"
                       className="text-xs text-white/50 hover:text-white transition-colors font-mono truncate"
                     >
-                      ianfirdaus.design@gmail.com
+                      ianfirdaus23@gmail.com
                     </a>
                     <div className="flex items-center justify-between text-xs text-white/40">
-                      <span>Indonesia</span>
+                      <span>Surabaya, Indonesia</span>
                       <span>GMT+7</span>
                     </div>
                   </div>
@@ -289,7 +289,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
 
             {/* Right Action Button */}
             <a
-              href={currentPage === 'home' ? '#contact' : 'mailto:ianfirdaus.design@gmail.com'}
+              href={currentPage === 'home' ? '#contact' : 'mailto:ianfirdaus23@gmail.com'}
               className="flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-[#0F172A] text-xs sm:text-sm font-bold hover:bg-white/90 transition-all shadow-md group cursor-pointer shrink-0 hover:scale-105 active:scale-95"
             >
               <span>Get in Touch</span>
@@ -323,7 +323,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
 
           {/* Right Action Button */}
           <a
-            href={currentPage === 'home' ? '#contact' : 'mailto:ianfirdaus.design@gmail.com'}
+            href={currentPage === 'home' ? '#contact' : 'mailto:ianfirdaus23@gmail.com'}
             className="flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-[#0F172A] text-xs sm:text-sm font-bold hover:bg-white/90 transition-all shadow-md group cursor-pointer shrink-0 hover:scale-105 active:scale-95"
           >
             <span>Get in Touch</span>

@@ -17,12 +17,6 @@ interface GalleryProject {
   isDribbble?: boolean;
 }
 
-const DribbbleIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm9.897 10.932a10.198 10.198 0 0 0-.897-2.618c-1.378.435-3.356.915-5.612 1.055 1.034 2.802 2.164 5.317 2.378 5.792a10.155 10.155 0 0 0 4.131-4.229zm-6.19 5.41c-.244-.54-1.372-3.04-2.42-5.83-4.708 1.405-9.155 1.348-9.845 1.332a10.17 10.17 0 0 0 5.86 7.085c1.693-2.148 4.793-2.457 6.405-2.587zm-7.986-7.85c2.443-.16 4.717-.674 6.22-1.164A10.133 10.133 0 0 0 8.01 2.502c-1.42 1.487-3.045 3.518-4.289 5.992zm-3.69 2.56a10.02 10.02 0 0 1 .494-1.637c1.233-2.39 2.793-4.35 4.148-5.787A10.22 10.22 0 0 0 2.584 8.76c.466 1.408 1.157 2.705 2.037 3.842-.01-.01-.01-.02-.01-.03zm12.392-7.59a10.152 10.152 0 0 0-4.048-1.46c.162.775.385 2.188.423 3.65 1.547-.464 3.018-.948 3.625-1.19zM10.1 21.688a10.217 10.217 0 0 0 5.158-1.503c-1.517.113-4.288.384-5.894 2.274a10.51 10.51 0 0 0 .736-.771z" />
-  </svg>
-);
-
 // 25 Curated Works categorized cleanly from Portfolio PDF + Dribbble Profile
 const BASE_PROJECTS: GalleryProject[] = [
   // Column 1
@@ -784,17 +778,9 @@ export const WorkGalleryPage: React.FC<WorkGalleryPageProps> = ({ onNavigate }) 
 
                                 {/* Subtle Dark Gradient & Clean Title on Hover/Selected */}
                                 <div
-                                  className={`absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-between p-3 transition-opacity duration-200 ${isSelected ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                                  className={`absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-3 transition-opacity duration-200 ${isSelected ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                                     }`}
                                 >
-                                  <div className="flex justify-end">
-                                    {card.isDribbble && (
-                                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#EA4C89] text-white text-[10px] font-bold tracking-wider shadow-sm">
-                                        <DribbbleIcon className="w-2.5 h-2.5" />
-                                        <span>DRIBBBLE</span>
-                                      </span>
-                                    )}
-                                  </div>
                                   <div className="flex flex-col">
                                     <span className="text-xs font-bold text-white truncate tracking-tight">
                                       {card.title}
